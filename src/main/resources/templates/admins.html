@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Listes des admins</title>
+</head>
+<body>
+
+	<h1>Liste</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>idUser</th>
+				<th>nom</th>
+				<th>prenom</th>
+				<th>adresse</th>
+				<th>dateN</th>
+				<th>email</th>
+				<th>login</th>
+				<th>numTel</th>
+				<th>password</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="a:${admins}">
+				<td th:texte="${a.idUser}"></td>
+				<td th:texte="${a.nom}"></td>
+				<td th:texte="${a.prenom}"></td>
+				<td th:texte="${a.adresse}"></td>
+				<td th:texte="${a.dateN}"></td>
+				<td th:texte="${a.email}"></td>
+				<td th:texte="${a.login}"></td>
+				<td th:texte="${a.numTel}"></td>
+				<td th:texte="${a.password}"></td>
+			</tr>
+		</tbody>
+
+	</table>
+</body>
+</html>
