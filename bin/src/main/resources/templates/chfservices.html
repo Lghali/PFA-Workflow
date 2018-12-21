@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Listes des chfservices</title>
+</head>
+<body>
+
+	<h1>Listes des chfservices</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>idUser</th>
+				<th>nom</th>
+				<th>prenom</th>
+				<th>adresse</th>
+				<th>dateN</th>
+				<th>dateEmbeauche</th>
+				<th>email</th>
+				<th>login</th>
+				<th>numTel</th>
+				<th>password</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="cs:${chfservices}">
+				<td th:text="${cs.idUser}"></td>
+				<td th:text="${cs.nom}"></td>
+				<td th:text="${cs.prenom}"></td>
+				<td th:text="${cs.adresse}"></td>
+				<td th:text="${cs.dateN}"></td>
+				<td th:text="${cs.dateEmbeauche}"></td>
+				<td th:text="${cs.email}"></td>
+				<td th:text="${cs.login}"></td>
+				<td th:text="${cs.numTel}"></td>
+				<td th:text="${cs.password}"></td>
+			</tr>
+		</tbody>
+
+	</table>
+</body>
+</html>
