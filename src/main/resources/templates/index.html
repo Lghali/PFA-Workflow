@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,13 +55,13 @@
 					</div>
 					<div class="col-lg-5 col-md-5 col-12">
 						<div class="p-40 bg-white content-bottom h-p100">
-							<form action="../index.html" method="post" class="form-element">
+							<form th:action="@{Login/Index}" method="post" class="form-element">
 								<div class="form-group">
 									<div class="input-group mb-3">
 										<div class="input-group-prepend">
 											<span class="input-group-text bg-info border-info"><i class="ti-user"></i></span>
 										</div>
-										<input type="text" class="form-control pl-15" placeholder="Username">
+										<input type="text" class="form-control pl-15" placeholder="Username" name="login">
 									</div>
 								</div>
 								<div class="form-group">
@@ -69,7 +69,7 @@
 										<div class="input-group-prepend">
 											<span class="input-group-text bg-info border-info"><i class="ti-lock"></i></span>
 										</div>
-										<input type="password" class="form-control pl-15" placeholder="Password">
+										<input type="password" class="form-control pl-15" placeholder="Password" name="mdp">
 									</div>
 								</div>
 								  <div class="row">

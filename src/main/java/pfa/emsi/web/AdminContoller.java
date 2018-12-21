@@ -17,7 +17,7 @@ public class AdminContoller {
 	@Autowired
 	private AdminRepository adminRepository;
 	
-	@RequestMapping(value="/Index")
+	@RequestMapping(value="/Resulta")
 	private String Index(Model model) {
 		List<Admin> admin=adminRepository.findAll();
 		model.addAttribute("admins", admin);
