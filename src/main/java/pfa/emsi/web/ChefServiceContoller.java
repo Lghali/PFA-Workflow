@@ -19,8 +19,8 @@ public class ChefServiceContoller {
 
 	@RequestMapping(value = "/Index")
 	private String Index(Model model) {
-		List<ChefService> chservcie = chefServiceRepository.findAll();
-		model.addAttribute("chfservices", chservcie);
+		List<ChefService> chservice = chefServiceRepository.findAll();
+		model.addAttribute("chfservices", chservice);
 		return "chfservices";
 
 	}

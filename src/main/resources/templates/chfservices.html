@@ -16,6 +16,7 @@
 				<th>prenom</th>
 				<th>adresse</th>
 				<th>dateN</th>
+				<th>dateEmbeauche</th>
 				<th>email</th>
 				<th>login</th>
 				<th>numTel</th>
@@ -24,12 +25,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="cs:${admins}">
+			<tr th:each="cs:${chfservices}">
 				<td th:texte="${cs.idUser}"></td>
 				<td th:texte="${cs.nom}"></td>
 				<td th:texte="${cs.prenom}"></td>
 				<td th:texte="${cs.adresse}"></td>
 				<td th:texte="${cs.dateN}"></td>
+				<td th:texte="${cs.dateEmbeauche}"></td>
 				<td th:texte="${cs.email}"></td>
 				<td th:texte="${cs.login}"></td>
 				<td th:texte="${cs.numTel}"></td>
