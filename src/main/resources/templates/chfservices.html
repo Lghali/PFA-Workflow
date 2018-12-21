@@ -6,7 +6,7 @@
 </head>
 <body>
 
-	<h1>Liste</h1>
+	<h1>Listes des chfservices</h1>
 
 	<table>
 		<thead>
@@ -26,16 +26,16 @@
 		</thead>
 		<tbody>
 			<tr th:each="cs:${chfservices}">
-				<td th:texte="${cs.idUser}"></td>
-				<td th:texte="${cs.nom}"></td>
-				<td th:texte="${cs.prenom}"></td>
-				<td th:texte="${cs.adresse}"></td>
-				<td th:texte="${cs.dateN}"></td>
-				<td th:texte="${cs.dateEmbeauche}"></td>
-				<td th:texte="${cs.email}"></td>
-				<td th:texte="${cs.login}"></td>
-				<td th:texte="${cs.numTel}"></td>
-				<td th:texte="${cs.password}"></td>
+				<td th:text="${cs.idUser}"></td>
+				<td th:text="${cs.nom}"></td>
+				<td th:text="${cs.prenom}"></td>
+				<td th:text="${cs.adresse}"></td>
+				<td th:text="${cs.dateN}"></td>
+				<td th:text="${cs.dateEmbeauche}"></td>
+				<td th:text="${cs.email}"></td>
+				<td th:text="${cs.login}"></td>
+				<td th:text="${cs.numTel}"></td>
+				<td th:text="${cs.password}"></td>
 			</tr>
 		</tbody>
 
