@@ -17,7 +17,7 @@ public class ChefService implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idUser;
+	private Long idUser;
 
 	private String adresse;
 
@@ -56,7 +56,7 @@ public class ChefService implements Serializable {
 	public ChefService() {
 	}
 
-	public int getIdUser() {
+	public Long getIdUser() {
 		return this.idUser;
 	}
 
@@ -74,7 +74,7 @@ public class ChefService implements Serializable {
 		this.prenom = prenom;
 	}
 
-	public void setIdUser(int idUser) {
+	public void setIdUser(Long idUser) {
 		this.idUser = idUser;
 	}
 

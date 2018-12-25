@@ -15,7 +15,7 @@ public class Service implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_service")
-	private int idService;
+	private Long idService;
 
 	private String service_libelle;
 
@@ -31,11 +31,11 @@ public class Service implements Serializable {
 		this.service_libelle = service_libelle;
 	}
 
-	public int getIdService() {
+	public Long getIdService() {
 		return this.idService;
 	}
 
-	public void setIdService(int idService) {
+	public void setIdService(Long idService) {
 		this.idService = idService;
 	}
 

@@ -16,7 +16,7 @@ public class Prerequi implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int prerequis_id;
+	private Long prerequis_id;
 
 	private String prerequis_etat;
 
@@ -40,11 +40,11 @@ public class Prerequi implements Serializable {
 		this.prerequis_type = prerequis_type;
 	}
 
-	public int getPrerequis_id() {
+	public Long getPrerequis_id() {
 		return this.prerequis_id;
 	}
 
-	public void setPrerequis_id(int prerequis_id) {
+	public void setPrerequis_id(Long prerequis_id) {
 		this.prerequis_id = prerequis_id;
 	}
 

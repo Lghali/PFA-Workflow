@@ -14,7 +14,7 @@ public class Documenttype implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int documentType_id;
+	private Long documentType_id;
 
 	private String documentType_libelle;
 
@@ -26,17 +26,16 @@ public class Documenttype implements Serializable {
 	public Documenttype() {
 	}
 
-	public Documenttype(int documentType_id, String documentType_libelle) {
+	public Documenttype(String documentType_libelle) {
 		super();
-		this.documentType_id = documentType_id;
 		this.documentType_libelle = documentType_libelle;
 	}
 
-	public int getDocumentType_id() {
+	public Long getDocumentType_id() {
 		return this.documentType_id;
 	}
 
-	public void setDocumentType_id(int documentType_id) {
+	public void setDocumentType_id(Long documentType_id) {
 		this.documentType_id = documentType_id;
 	}
 

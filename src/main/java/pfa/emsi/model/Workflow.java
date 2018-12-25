@@ -16,7 +16,7 @@ public class Workflow implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_workflow")
-	private int idWorkflow;
+	private Long idWorkflow;
 
 	@Column(name = "workflow_etat")
 	private String workflowEtat;
@@ -37,11 +37,11 @@ public class Workflow implements Serializable {
 		this.workflowEtat = workflowEtat;
 	}
 
-	public int getIdWorkflow() {
+	public Long getIdWorkflow() {
 		return this.idWorkflow;
 	}
 
-	public void setIdWorkflow(int idWorkflow) {
+	public void setIdWorkflow(Long idWorkflow) {
 		this.idWorkflow = idWorkflow;
 	}
 

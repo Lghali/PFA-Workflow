@@ -24,7 +24,7 @@ public class Demandeur implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idUser;
+	private Long idUser;
 
 	private String adresse;
 
@@ -63,11 +63,11 @@ public class Demandeur implements Serializable {
 		this.prenom = prenom;
 	}
 
-	public int getIdUser() {
+	public Long getIdUser() {
 		return this.idUser;
 	}
 
-	public void setIdUser(int idUser) {
+	public void setIdUser(Long idUser) {
 		this.idUser = idUser;
 	}
 

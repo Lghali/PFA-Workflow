@@ -15,7 +15,7 @@ public class Etape implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int etape_id;
+	private Long etape_id;
 
 	private String nomEtape;
 
@@ -40,11 +40,11 @@ public class Etape implements Serializable {
 		this.nomEtape = nomEtape;
 	}
 
-	public int getEtape_id() {
+	public Long getEtape_id() {
 		return this.etape_id;
 	}
 
-	public void setEtape_id(int etape_id) {
+	public void setEtape_id(Long etape_id) {
 		this.etape_id = etape_id;
 	}
 

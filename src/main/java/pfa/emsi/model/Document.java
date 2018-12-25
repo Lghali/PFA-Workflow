@@ -16,7 +16,7 @@ public class Document implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_document")
-	private int idDocument;
+	private Long idDocument;
 
 	private String document_etat;
 
@@ -51,7 +51,7 @@ public class Document implements Serializable {
 	public Document() {
 	}
 
-	public int getIdDocument() {
+	public Long getIdDocument() {
 		return this.idDocument;
 	}
 
@@ -65,7 +65,7 @@ public class Document implements Serializable {
 		this.signatureDirecture = signatureDirecture;
 	}
 
-	public void setIdDocument(int idDocument) {
+	public void setIdDocument(Long idDocument) {
 		this.idDocument = idDocument;
 	}
 

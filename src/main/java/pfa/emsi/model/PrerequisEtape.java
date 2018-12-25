@@ -16,7 +16,7 @@ public class PrerequisEtape implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "prerequis_etape_id")
-	private int prerequisEtapeId;
+	private Long prerequisEtapeId;
 
 	@Column(name = "prerequis_etape_etat")
 	private String prerequisEtapeEtat;
@@ -42,11 +42,11 @@ public class PrerequisEtape implements Serializable {
 		this.prerequisEtapeType = prerequisEtapeType;
 	}
 
-	public int getPrerequisEtapeId() {
+	public Long getPrerequisEtapeId() {
 		return this.prerequisEtapeId;
 	}
 
-	public void setPrerequisEtapeId(int prerequisEtapeId) {
+	public void setPrerequisEtapeId(Long prerequisEtapeId) {
 		this.prerequisEtapeId = prerequisEtapeId;
 	}
 
