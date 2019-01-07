@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value = "/Admin")
 public class AdminContoller {
+	
+	@RequestMapping(value = "/Index")
+	public String index() {
+		return "/admin/indexAdmin";
+	}
 
 	/*
 	 * @RequestMapping("/error") public String handleError() { return "error"; }

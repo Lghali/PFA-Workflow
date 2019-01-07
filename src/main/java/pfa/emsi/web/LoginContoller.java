@@ -43,14 +43,14 @@ public class LoginContoller {
 		if (admin != null) {
 			if (admin.getPassword().equals(mdp)) {
 				model.addAttribute("user", admin);
-				return "/admin/index";
+				return "redirect:/Admin/Index";
 			} else {
 				return "redirect:/";
 			}
 		} else if (chefService != null) {
 			if (chefService.getPassword().equals(mdp)) {
 				model.addAttribute("user", chefService);
-				return "redirect:/chefService/index";
+				return "/chefService/index";
 			} else {
 				return "redirect:/";
 			}
@@ -72,6 +72,11 @@ public class LoginContoller {
 
 		return "redirect:/";
 
+	}
+
+	@RequestMapping(value = "/Logout")
+	public String logout() {
+		return "/index";
 	}
 
 }

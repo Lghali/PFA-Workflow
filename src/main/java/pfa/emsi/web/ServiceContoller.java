@@ -11,19 +11,20 @@ import pfa.emsi.dao.ServiceRepository;
 import pfa.emsi.model.Service;
 
 @Controller
+@RequestMapping(value = "/Service")
 public class ServiceContoller {
 	
 	@Autowired
 	private ServiceRepository serviceRepository;
 	
-	@RequestMapping(value = "/Index")
-	private String index(Model model) {
+	@RequestMapping(value = "/List")
+	private String List(Model model) {
 		List<Service> services = serviceRepository.findAll();
 		model.addAttribute("services", services);
 		return "/admin/listerService";
 	}
 	
-	@RequestMapping(value = "/AjouterOuModifier")
+	@RequestMapping(value = "/AjouterOuModifierService")
 	private String ajouterOuModifier(Model model, Long id) {
 		if (id != null) {
 			Service service = serviceRepository.getOne(id);
@@ -37,19 +38,19 @@ public class ServiceContoller {
 	@RequestMapping(value = "/AjouterService")
 	private String ajouterService(Service service) {
 		serviceRepository.save(service);
-		return "redirect:Index";
+		return "redirect:List";
 	}
 
 	@RequestMapping(value = "/ModifierService")
 	private String modifierService(Model model, Long id) {
-		return "redirect:AjouterOuModifier(id="+id+")";
+		return "redirect:AjouterOuModifierService(id="+id+")";
 	}
 
 	@RequestMapping(value = "/SuppService")
 	private String suppService(Long id) {
 		final Service service = serviceRepository.getOne(id);
 		serviceRepository.delete(service);
-		return "redirect:Index";
+		return "redirect:List";
 	}
 
 	/*
