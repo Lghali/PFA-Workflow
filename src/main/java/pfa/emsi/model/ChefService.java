@@ -1,9 +1,20 @@
 package pfa.emsi.model;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * The persistent class for the chef_service database table.
@@ -21,9 +32,11 @@ public class ChefService implements Serializable {
 
 	private String adresse;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateEmbeauche;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateN;
 
@@ -39,19 +52,8 @@ public class ChefService implements Serializable {
 
 	private String prenom;
 
-	// bi-directional one-to-one association to Service
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_service")
 	private Service service;
-
-	// bi-directional one-to-one association to Etape
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idUser", referencedColumnName = "idUser")
-	private Etape etape;
-
-	// bi-directional many-to-many association to Document
-	@ManyToMany(mappedBy = "chefServices")
-	private List<Document> documents;
 
 	public ChefService() {
 	}
@@ -156,22 +158,6 @@ public class ChefService implements Serializable {
 
 	public void setService(Service service) {
 		this.service = service;
-	}
-
-	public Etape getEtape() {
-		return this.etape;
-	}
-
-	public void setEtape(Etape etape) {
-		this.etape = etape;
-	}
-
-	public List<Document> getDocuments() {
-		return this.documents;
-	}
-
-	public void setDocuments(List<Document> documents) {
-		this.documents = documents;
 	}
 
 }

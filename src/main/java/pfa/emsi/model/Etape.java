@@ -19,8 +19,7 @@ public class Etape implements Serializable {
 
 	private String nomEtape;
 
-	// bi-directional one-to-one association to ChefService
-	@OneToOne(mappedBy = "etape", fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	private ChefService chefService;
 
 	// bi-directional many-to-one association to Workflow

@@ -19,10 +19,6 @@ public class Service implements Serializable {
 
 	private String service_libelle;
 
-	// bi-directional one-to-one association to ChefService
-	@OneToOne(mappedBy = "service", fetch = FetchType.LAZY)
-	private ChefService chefService;
-
 	public Service() {
 	}
 
@@ -45,14 +41,6 @@ public class Service implements Serializable {
 
 	public void setService_libelle(String service_libelle) {
 		this.service_libelle = service_libelle;
-	}
-
-	public ChefService getChefService() {
-		return this.chefService;
-	}
-
-	public void setChefService(ChefService chefService) {
-		this.chefService = chefService;
 	}
 
 }
