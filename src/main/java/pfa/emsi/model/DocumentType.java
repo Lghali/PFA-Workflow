@@ -8,8 +8,8 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@NamedQuery(name = "Documenttype.findAll", query = "SELECT d FROM Documenttype d")
-public class Documenttype implements Serializable {
+@NamedQuery(name = "DocumentType.findAll", query = "SELECT d FROM DocumentType d")
+public class DocumentType implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -18,15 +18,13 @@ public class Documenttype implements Serializable {
 
 	private String documentType_libelle;
 
-	// bi-directional many-to-one association to Workflow
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_workflow")
 	private Workflow workflow;
 
-	public Documenttype() {
+	public DocumentType() {
 	}
 
-	public Documenttype(String documentType_libelle) {
+	public DocumentType(String documentType_libelle) {
 		super();
 		this.documentType_libelle = documentType_libelle;
 	}

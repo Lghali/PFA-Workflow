@@ -2,16 +2,16 @@ package pfa.emsi.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * The persistent class for the demandeur database table.
@@ -28,6 +28,7 @@ public class Demandeur implements Serializable {
 
 	private String adresse;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateN;
 
@@ -42,10 +43,6 @@ public class Demandeur implements Serializable {
 	private String password;
 
 	private String prenom;
-
-	// bi-directional many-to-one association to Document
-	@OneToMany(mappedBy = "demandeur")
-	private List<Document> documents;
 
 	public Demandeur() {
 	}
@@ -134,27 +131,4 @@ public class Demandeur implements Serializable {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-
-	public List<Document> getDocuments() {
-		return this.documents;
-	}
-
-	public void setDocuments(List<Document> documents) {
-		this.documents = documents;
-	}
-
-	public Document addDocument(Document document) {
-		getDocuments().add(document);
-		document.setDemandeur(this);
-
-		return document;
-	}
-
-	public Document removeDocument(Document document) {
-		getDocuments().remove(document);
-		document.setDemandeur(null);
-
-		return document;
-	}
-
 }

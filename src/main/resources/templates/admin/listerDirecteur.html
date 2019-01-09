@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  	<title>Liste des chefs des services</title>
+  	<title>Liste des Directeurs</title>
 	<th:block th:include="fragment/adminFragment :: headinc"></th:block>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -21,10 +21,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>Liste des chefs des services</h1>
+      <h1>Liste des directeurs</h1>
       <ol class="breadcrumb">
         <li><a th:href="@{/Admin/Index}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Chef service</li>
+        <li class="active">Directeur</li>
         <li class="active">Liste</li>
       </ol>
     </section>
@@ -45,7 +45,6 @@
 					<th>Date Naissance</th>
 					<th>Login</th>
 					<th>Password</th>
-					<th>Service</th>
 					<th>Num Tel</th>
 					<th>Email</th>
 					<th>Date Embeauche</th>
@@ -54,20 +53,19 @@
 				</tr>
                 </thead>
                 <tbody>
-                <tr th:each="c:${chefServices}">
-					<td th:text="${c.idUser}"></td>
-					<td th:text="${c.nom}"></td>
-					<td th:text="${c.prenom}"></td>
-					<td th:text="${c.adresse}"></td>
-					<td th:text="${c.dateN}"></td>
-					<td th:text="${c.login}"></td>
-					<td th:text="${c.password}"></td>
-					<td th:text="${c.service.service_libelle}"></td>
-					<td th:text="${c.numTel}"></td>
-					<td th:text="${c.email}"></td>
-					<td th:text="${c.dateEmbeauche}"></td>
-					<td><a th:href="@{/ChefService/AjouterOuModifierChefService(id=${c.idUser})}" ><button class="btn btn-primary">Modifier</button></a></td>
-					<td><a onclick = "return confirm('Etes vous sure?')" th:href="@{/ChefService/SuppChefService(id=${c.idUser})}" ><button class="btn btn-danger">Supprimer</button></a></td>
+                <tr th:each="d:${directeurs}">
+					<td th:text="${d.idUser}"></td>
+					<td th:text="${d.nom}"></td>
+					<td th:text="${d.prenom}"></td>
+					<td th:text="${d.adresse}"></td>
+					<td th:text="${d.dateN}"></td>
+					<td th:text="${d.login}"></td>
+					<td th:text="${d.password}"></td>
+					<td th:text="${d.numTel}"></td>
+					<td th:text="${d.email}"></td>
+					<td th:text="${d.dateEmbeauche}"></td>
+					<td><a th:href="@{/Directeur/AjouterOuModifier(id=${d.idUser})}" ><button class="btn btn-primary">Modifier</button></a></td>
+					<td><a onclick = "return confirm('Etes vous sure?')" th:href="@{/Directeur/Supp(id=${d.idUser})}" ><button class="btn btn-danger">Supprimer</button></a></td>
 				</tr>
                 </tbody>
                 <tfoot>
@@ -79,7 +77,6 @@
 					<th>Date Naissance</th>
 					<th>Login</th>
 					<th>Password</th>
-					<th>Service</th>
 					<th>Num Tel</th>
 					<th>Email</th>
 					<th>Date Embeauche</th>

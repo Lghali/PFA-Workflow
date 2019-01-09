@@ -1,8 +1,15 @@
 package pfa.emsi.model;
 
 import java.io.Serializable;
-import javax.persistence.*;
-import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 
 /**
  * The persistent class for the etape database table.
@@ -22,14 +29,8 @@ public class Etape implements Serializable {
 	@OneToOne(fetch = FetchType.LAZY)
 	private ChefService chefService;
 
-	// bi-directional many-to-one association to Workflow
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_workflow")
 	private Workflow workflow;
-
-	// bi-directional many-to-one association to PrerequisEtape
-	@OneToMany(mappedBy = "etape")
-	private List<PrerequisEtape> prerequisEtapes;
 
 	public Etape() {
 	}
@@ -69,28 +70,6 @@ public class Etape implements Serializable {
 
 	public void setWorkflow(Workflow workflow) {
 		this.workflow = workflow;
-	}
-
-	public List<PrerequisEtape> getPrerequisEtapes() {
-		return this.prerequisEtapes;
-	}
-
-	public void setPrerequisEtapes(List<PrerequisEtape> prerequisEtapes) {
-		this.prerequisEtapes = prerequisEtapes;
-	}
-
-	public PrerequisEtape addPrerequisEtape(PrerequisEtape prerequisEtape) {
-		getPrerequisEtapes().add(prerequisEtape);
-		prerequisEtape.setEtape(this);
-
-		return prerequisEtape;
-	}
-
-	public PrerequisEtape removePrerequisEtape(PrerequisEtape prerequisEtape) {
-		getPrerequisEtapes().remove(prerequisEtape);
-		prerequisEtape.setEtape(null);
-
-		return prerequisEtape;
 	}
 
 }

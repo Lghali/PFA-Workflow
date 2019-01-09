@@ -18,7 +18,7 @@ public class ServiceContoller {
 	private ServiceRepository serviceRepository;
 	
 	@RequestMapping(value = "/List")
-	private String List(Model model) {
+	private String list(Model model) {
 		List<Service> services = serviceRepository.findAll();
 		model.addAttribute("services", services);
 		return "/admin/listerService";
@@ -36,18 +36,18 @@ public class ServiceContoller {
 	}
 	
 	@RequestMapping(value = "/AjouterService")
-	private String ajouterService(Service service) {
+	private String ajouter(Service service) {
 		serviceRepository.save(service);
 		return "redirect:List";
 	}
 
 	@RequestMapping(value = "/ModifierService")
-	private String modifierService(Model model, Long id) {
+	private String modifier(Model model, Long id) {
 		return "redirect:AjouterOuModifierService(id="+id+")";
 	}
 
 	@RequestMapping(value = "/SuppService")
-	private String suppService(Long id) {
+	private String supp(Long id) {
 		final Service service = serviceRepository.getOne(id);
 		serviceRepository.delete(service);
 		return "redirect:List";

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  	<title>Ajouter Directeur</title>
+	<th:block th:include="fragment/adminFragment :: headinc"></th:block>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  	<header class="main-header" >
+	<!-- header from the page fragment/adminFragment.html -->
+	<th:block th:include="fragment/adminFragment :: header"></th:block>
+	</header>
+    
+    <aside  class="main-sidebar" >
+    <!-- aside from the page fragment/adminFragment.html -->
+	<th:block th:include="fragment/adminFragment :: aside"></th:block>
+  	</aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>Ajouter un directeur.</h1>
+      <ol class="breadcrumb">
+        <li><a th:href="@{/Admin/Index}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Directeur</li>
+        <li class="active">Ajouter</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-8" style="margin-left: 15%;">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Formulaire de directeur</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" th:action="@{/Directeur/AjouterDirecteur}" method="post" th:object="${directeur}">
+              <div class="box-body">
+                <input type="hidden" th:field="*{idUser}"/>
+                <div class="form-group">
+                  <label for="nom">Nom</label>
+                  <input type="text" class="form-control" id="nom" placeholder="Nom" th:field="*{nom}">
+                </div>
+                <div class="form-group">
+                  <label for="prenom">Prenom</label>
+                  <input type="text" class="form-control" id="prenom" placeholder="Prenom" th:field="*{prenom}">
+                </div>
+                <div class="form-group">
+                  <label for="adresse">Adresse</label>
+                  <input type="text" class="form-control" id="adresse" placeholder="Adresse" th:field="*{adresse}">
+                </div>
+                <div class="form-group">
+                  <label for="dateN">Date Naissance</label>
+                  <input type="date" class="form-control" id="dateN" placeholder="Date Naissance" th:field="*{dateN}">
+                </div>
+                <div class="form-group">
+                  <label for="login">Login</label>
+                  <input type="text" class="form-control" id="login" placeholder="Login" th:field="*{login}">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="text" class="form-control" id="password" placeholder="Password" th:field="*{password}">
+                </div>
+                <div class="form-group">
+                  <label for="numTel">Num Tel</label>
+                  <input type="text" class="form-control" id="numTel" placeholder="Num Tel" th:field="*{numTel}">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Email" th:field="*{email}">
+                </div>
+                <div class="form-group">
+                  <label for="dateEmbeauche">Date Embeauche</label>
+                  <input type="date" class="form-control" id="dateEmbeauche" placeholder="Date Embeauche" th:field="*{dateEmbeauche}">
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Valider</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+	<th:block th:include="fragment/adminFragment :: footer"></th:block>
+  </footer>
+
+</div>
+<!-- ./wrapper -->
+
+<th:block th:include="fragment/adminFragment :: scriptinc"></th:block>
+
+</body>
+</html>

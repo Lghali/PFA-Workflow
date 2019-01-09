@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  	<title>Ajouter Workflow</title>
+	<th:block th:include="fragment/directeurFragment :: headinc"></th:block>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  	<header class="main-header" >
+	<!-- header from the page fragment/directeurFragment.html -->
+	<th:block th:include="fragment/directeurFragment :: header"></th:block>
+	</header>
+    
+    <aside  class="main-sidebar" >
+    <!-- aside from the page fragment/directeurFragment.html -->
+	<th:block th:include="fragment/directeurFragment :: aside"></th:block>
+  	</aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>Ajouter un workflow.</h1>
+      <ol class="breadcrumb">
+        <li><a th:href="@{/Admin/Index}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Workflow</li>
+        <li class="active">Ajouter</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-8" style="margin-left: 15%;">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Formulaire de workflow</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" th:action="@{/Workflow/AjouterWorkflow}" method="post" th:object="${workflow}">
+              <div class="box-body">
+                <input type="hidden" th:field="*{idWorkflow}"/>
+                <div class="form-group">
+                  <label for="libelle">Libelle</label>
+                  <input type="text" class="form-control" id="libelle" placeholder="Libelle" th:field="*{workflowLibelle}">
+                </div>
+                <div class="form-group">
+                  <label for="etat">Etat</label>
+                  <input type="text" class="form-control" id="etat" placeholder="Etat" th:field="*{workflowEtat}">
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Valider</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+	<th:block th:include="fragment/directeurFragment :: footer"></th:block>
+  </footer>
+
+</div>
+<!-- ./wrapper -->
+
+<th:block th:include="fragment/directeurFragment :: scriptinc"></th:block>
+
+</body>
+</html>

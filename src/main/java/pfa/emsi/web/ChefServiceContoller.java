@@ -23,7 +23,7 @@ public class ChefServiceContoller {
 	private ServiceRepository serviceRepository;
 
 	@RequestMapping(value = "/List")
-	private String List(Model model) {
+	private String list(Model model) {
 		List<ChefService> chefServices = chefServiceRepository.findAll();
 		model.addAttribute("chefServices", chefServices);
 		return "/admin/listerChefService";
@@ -43,18 +43,18 @@ public class ChefServiceContoller {
 	}
 
 	@RequestMapping(value = "/AjouterChefService")
-	private String ajouterService(ChefService chefService) {
+	private String ajouter(ChefService chefService) {
 		chefServiceRepository.save(chefService);
 		return "redirect:List";
 	}
 
 	@RequestMapping(value = "/ModifierChefService")
-	private String modifierService(Model model, Long id) {
+	private String modifier(Model model, Long id) {
 		return "redirect:AjouterOuModifierChefService(id=" + id + ")";
 	}
 
 	@RequestMapping(value = "/SuppChefService")
-	private String suppService(Long id) {
+	private String supp(Long id) {
 		final ChefService chefService = chefServiceRepository.getOne(id);
 		chefServiceRepository.delete(chefService);
 		return "redirect:List";

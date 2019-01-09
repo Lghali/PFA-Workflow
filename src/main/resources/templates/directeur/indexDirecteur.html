@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Espace Admin</title>
-  <th:block th:include="fragment/adminFragment :: headinc"></th:block>
+  <title>Espace Directeur</title>
+  <th:block th:include="fragment/directeurFragment :: headinc"></th:block>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
 	<header class="main-header" >
-	<!-- header from the page fragment/adminFragment.html -->
-	<th:block th:include="fragment/adminFragment :: header"></th:block>
+	<!-- header from the page fragment/directeurFragment.html -->
+	<th:block th:include="fragment/directeurFragment :: header"></th:block>
 	</header>
     
     <aside  class="main-sidebar" >
-    <!-- aside from the page fragment/adminFragment.html -->
-	<th:block th:include="fragment/adminFragment :: aside"></th:block>
+    <!-- aside from the page fragment/directeurFragment.html -->
+	<th:block th:include="fragment/directeurFragment :: aside"></th:block>
   	</aside>
   	
   <!-- Content Wrapper. Contains page content -->
@@ -26,7 +26,7 @@
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a th:href="@{/Admin/Index}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a th:href="@{/Directeur/Index}"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>
@@ -538,12 +538,12 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-	<th:block th:include="fragment/adminFragment :: footer"></th:block>
+	<th:block th:include="fragment/directeurFragment :: footer"></th:block>
   </footer>
 </div>
 <!-- ./wrapper -->
 
-<th:block th:include="fragment/adminFragment :: scriptinc"></th:block>
+<th:block th:include="fragment/directeurFragment :: scriptinc"></th:block>
 
 </body>
 </html>

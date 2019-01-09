@@ -64,7 +64,7 @@ public class LoginContoller {
 		} else if (directeur != null) {
 			if (directeur.getPassword().equals(mdp)) {
 				model.addAttribute("user", directeur);
-				return "redirect:/directeur/index";
+				return "redirect:/Directeur/Index";
 			} else {
 				return "redirect:/";
 			}

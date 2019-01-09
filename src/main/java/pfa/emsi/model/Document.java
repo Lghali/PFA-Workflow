@@ -28,24 +28,15 @@ public class Document implements Serializable {
 
 	private byte signatureDirecture;
 
-	// bi-directional many-to-one association to Directeur
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "Dir_idUser")
 	private Directeur directeur;
 
-	// bi-directional many-to-many association to ChefService
 	@ManyToMany
 	@JoinTable(name = "signature", joinColumns = { @JoinColumn(name = "id_document") }, inverseJoinColumns = {
 			@JoinColumn(name = "idUser") })
 	private List<ChefService> chefServices;
 
-	// bi-directional many-to-many association to Prerequi
-	@ManyToMany(mappedBy = "documents")
-	private List<Prerequi> prerequis;
-
-	// bi-directional many-to-one association to Demandeur
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "Dem_idUser")
 	private Demandeur demandeur;
 
 	public Document() {
@@ -123,14 +114,6 @@ public class Document implements Serializable {
 
 	public void setChefServices(List<ChefService> chefServices) {
 		this.chefServices = chefServices;
-	}
-
-	public List<Prerequi> getPrerequis() {
-		return this.prerequis;
-	}
-
-	public void setPrerequis(List<Prerequi> prerequis) {
-		this.prerequis = prerequis;
 	}
 
 	public Demandeur getDemandeur() {

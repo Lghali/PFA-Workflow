@@ -284,61 +284,31 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active">
-          <a th:href="@{/Admin/Index}">
+          <a th:href="@{/Directeur/Index}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>Service</span>
+            <span>Workflow</span>
           </a>
           <ul class="treeview-menu">
-            <li><a th:href="@{/Service/List}"><i class="fa fa-circle-o"></i> Lister</a></li>
-            <li><a th:href="@{/Service/AjouterOuModifierService}"><i class="fa fa-circle-o"></i> Ajouter</a></li>
+            <li><a th:href="@{/Workflow/List}"><i class="fa fa-circle-o"></i> Lister</a></li>
+            <li><a th:href="@{/Workflow/AjouterOuModifierWorkflow}"><i class="fa fa-circle-o"></i> Ajouter</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>Chef Service</span>
+            <span>Etape de work</span>
           </a>
           <ul class="treeview-menu">
-            <li><a th:href="@{/ChefService/List}"><i class="fa fa-circle-o"></i> Lister</a></li>
-            <li><a th:href="@{/ChefService/AjouterOuModifierChefService}"><i class="fa fa-circle-o"></i> Ajouter</a></li>
+            <li><a th:href="@{/Etape/List}"><i class="fa fa-circle-o"></i> Lister</a></li>
+            <li><a th:href="@{/Etape/AjouterOuModifierEtape}"><i class="fa fa-circle-o"></i> Ajouter</a></li>
           </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>Demandeur</span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a th:href="@{/Demandeur/List}"><i class="fa fa-circle-o"></i> Lister</a></li>
-            <li><a th:href="@{/Demandeur/AjouterOuModifierDemandeur}"><i class="fa fa-circle-o"></i> Ajouter</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>Directeur</span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a th:href="@{/Directeur/List}"><i class="fa fa-circle-o"></i> Lister</a></li>
-            <li><a th:href="@{/Directeur/AjouterOuModifierDirecteur}"><i class="fa fa-circle-o"></i> Ajouter</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>Type de document</span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a th:href="@{/DocumentType/List}"><i class="fa fa-circle-o"></i> Lister</a></li>
-            <li><a th:href="@{/DocumentType/AjouterOuModifierDocumentType}"><i class="fa fa-circle-o"></i> Ajouter</a></li>
-          </ul>
-        </li>
-        
+        </li>        
+                
       </ul>
     </section>
     <!-- /.sidebar -->

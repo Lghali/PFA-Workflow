@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  	<title>Ajouter Types de Documents</title>
+	<th:block th:include="fragment/adminFragment :: headinc"></th:block>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  	<header class="main-header" >
+	<!-- header from the page fragment/adminFragment.html -->
+	<th:block th:include="fragment/adminFragment :: header"></th:block>
+	</header>
+    
+    <aside  class="main-sidebar" >
+    <!-- aside from the page fragment/adminFragment.html -->
+	<th:block th:include="fragment/adminFragment :: aside"></th:block>
+  	</aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>Ajouter un type de document.</h1>
+      <ol class="breadcrumb">
+        <li><a th:href="@{/Admin/Index}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Type Document</li>
+        <li class="active">Ajouter</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-8" style="margin-left: 15%;">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Formulaire de type de document</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" th:action="@{/DocumentType/AjouterDocumentType}" method="post" th:object="${documentType}">
+              <div class="box-body">
+                <input type="hidden" th:field="*{documentType_id}"/>
+                <div class="form-group">
+                  <label for="libelle">Libelle</label>
+                  <input type="text" class="form-control" id="libelle" placeholder="Libelle" th:field="*{documentType_libelle}">
+                </div>
+                <div class="form-group">
+                	<label for="workflow">Workflow</label>
+                	<select class="form-control" id="workflow" th:field="*{workflow}">
+                	<option value=""> -- </option>
+                		<option th:each="w:${workflows}" th:value="${w.idWorkflow}" th:text="${w.workflowLibelle}"></option>
+                	</select>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Valider</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+	<th:block th:include="fragment/adminFragment :: footer"></th:block>
+  </footer>
+
+</div>
+<!-- ./wrapper -->
+
+<th:block th:include="fragment/adminFragment :: scriptinc"></th:block>
+
+</body>
+</html>

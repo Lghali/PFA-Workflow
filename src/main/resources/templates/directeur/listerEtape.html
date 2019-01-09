@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  	<title>List des Etapes de Workflows</title>
+	<th:block th:include="fragment/directeurFragment :: headinc"></th:block>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+	<header class="main-header" >
+	<!-- header from the page fragment/directeurFragment.html -->
+	<th:block th:include="fragment/directeurFragment :: header"></th:block>
+	</header>
+    
+    <aside  class="main-sidebar" >
+    <!-- aside from the page fragment/directeurFragment.html -->
+	<th:block th:include="fragment/directeurFragment :: aside"></th:block>
+  	</aside>
+  	
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>Liste des etapes de workflows</h1>
+      <ol class="breadcrumb">
+        <li><a th:href="@{/Directeur/Index}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Etape Workflow</li>
+        <li class="active">Liste</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+					<th>Id</th>
+					<th>Nom Etape</th>
+					<th>Chef de service</th>
+					<th>Workflow</th>
+					<th>Modifier</th>
+					<th>Supprimer</th>
+				</tr>
+                </thead>
+                <tbody>
+                <tr th:each="e:${etapes}">
+					<td th:text="${e.etape_id}"></td>
+					<td th:text="${e.nomEtape}"></td>
+					<td th:text="${e.chefService.nom}"></td>
+					<td th:text="${e.workflow.workflowLibelle}"></td>
+					<td><a th:href="@{/Etape/AjouterOuModifierEtape(id=${e.etape_id})}" ><button class="btn btn-primary">Modifier</button></a></td>
+					<td><a onclick = "return confirm('Etes vous sure?')" th:href="@{/Etape/SuppEtape(id=${e.etape_id})}" ><button class="btn btn-danger">Supprimer</button></a></td>
+				</tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  	<th>Id</th>
+					<th>Libelle</th>
+					<th>Etat</th>
+					<th>Modifier</th>
+					<th>Supprimer</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+<footer class="main-footer">
+	<th:block th:include="fragment/directeurFragment :: footer"></th:block>
+</footer>
+</div>
+<!-- ./wrapper -->
+
+<th:block th:include="fragment/directeurFragment :: scriptinc"></th:block>
+<!-- page script -->
+<script>
+  $(function () {
+    $('#example1').DataTable()
+  })
+</script>
+</body>
+</html>
